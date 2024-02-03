@@ -46,7 +46,31 @@ function initialPrompt() {
 
 console.log(oldScrabbleScorer(initialPrompt()));
 
-let simpleScorer;
+// Task 2.1: Define a function "simpleScorer" that takes a word as a 
+// parameter and returns a numerical score. Each letter within the word is worth 1 point.
+
+const simplePointStructure = {
+   1: ['A', 'E', 'I', 'O', 'U', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
+};
+
+function simpleScorer(word) {
+	word = word.toUpperCase();
+	let letterPoints = "";
+ 
+	for (let i = 0; i < word.length; i++) {
+ 
+	  for (const pointValue in simplePointStructure) {
+ 
+		 if (simplePointStructure[pointValue].includes(word[i])) {
+			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+		   }
+ 
+	   }
+	}
+	return letterPoints;
+}
+
+console.log(simpleScorer(initialPrompt()));
 
 let vowelBonusScorer;
 
