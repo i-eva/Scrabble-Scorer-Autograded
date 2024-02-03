@@ -142,13 +142,20 @@ function scorerPrompt() {
       
       `);
    scrabbleScorer = input.question("Enter a 0, 1, or 2: ");
+   console.log(`Score for ${scoringAlgorithms[scrabbleScorer].name} is: ${scoringAlgorithms[scrabbleScorer].scoringFunction(initialPrompt())}`);
    return scrabbleScorer; 
 };
+
+//   // Simple scoring example
+// console.log("algorithm name: ", scoringAlgorithms[0].name);
+// console.log("scoringFunction result: ", scoringAlgorithms[0].scoringFunction("JavaScript"));
 
 // Task 2.6 Call scorerPrompt() inside of runProgram() so that the program asks 
 // the user for a scoring algorithm after prompting for a word. Use the 
 // scoring object returned from scorerPrompt() to score the user’s word 
 // and let the user know what score their word receives.
+
+// Output "Score for '<word>' is: <score>"
 
 function transform() {};
 
