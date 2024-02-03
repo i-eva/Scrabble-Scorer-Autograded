@@ -44,7 +44,7 @@ function initialPrompt() {
 // Task 1.2: Use the oldScrabbleScorer() function provided to score the word 
 // provided by the user. Print the result to the console.
 
-console.log(oldScrabbleScorer(initialPrompt()));
+// console.log(oldScrabbleScorer(initialPrompt()));
 
 // Task 2.1: Define a function "simpleScorer" that takes a word as a 
 // parameter and returns a numerical score. Each letter within the word is worth 1 point.
@@ -70,7 +70,7 @@ function simpleScorer(word) {
 	return letterPoints;
 };
 
-console.log(simpleScorer(initialPrompt()));
+// console.log(simpleScorer(initialPrompt()));
 
 // Task 2.2: Define a function "vowelBonusScorer" that takes a word as a 
 // parameter and returns a score. Each vowel within the word is worth 3 points, 
@@ -98,7 +98,7 @@ function vowelBonusScorer(word) {
 	return letterPoints;
 };
 
-console.log(vowelBonusScorer(initialPrompt()));
+// console.log(vowelBonusScorer(initialPrompt()));
 
 // Task 2.3: Finish writing the scoringAlgorithms array. 
 // It should be populated with three objects, one for each of the three scoring options. 
@@ -126,7 +126,17 @@ let scrabble = {
 
 const scoringAlgorithms = [simple, vowel, scrabble];
 
-function scorerPrompt() {}
+function scorerPrompt() {
+   console.log(`Which scoring algorithm would you like to use?
+
+      0 - Simple: One point per character
+      1 - Vowel Bonus: Vowels are worth 3 points
+      2 - Scrabble: Uses scrabble point system
+      
+      `);
+   scrabbleScorer = input.question("Enter a 0, 1, or 2: ");
+   return scrabbleScorer; 
+};
 
 function transform() {};
 
@@ -134,6 +144,7 @@ let newPointStructure;
 
 function runProgram() {
    initialPrompt();
+   scorerPrompt();
    
 }
 
