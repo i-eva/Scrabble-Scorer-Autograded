@@ -100,9 +100,31 @@ function vowelBonusScorer(word) {
 
 console.log(vowelBonusScorer(initialPrompt()));
 
+// Task 2.3: Finish writing the scoringAlgorithms array. 
+// It should be populated with three objects, one for each of the three scoring options. 
+// Each object should contain three keys: name, description, and scoringFunction.
+
 let scrabbleScorer;
 
-const scoringAlgorithms = [];
+let simple = {
+   name: "Simple Score",
+   description: "Each letter is worth one point.",
+   scoringFunction: simpleScorer,
+};
+
+let vowel = {
+   name: "Vowel Bonus",
+   description: "Each vowel is three points, each consonant is one point.",
+   scoringFunction: vowelBonusScorer,
+};
+
+let scrabble = {
+   name: "Scrabble",
+   description: "The traditional scoring algorithm.",
+   scoringFunction: oldScrabbleScorer,
+};
+
+const scoringAlgorithms = [simple, vowel, scrabble];
 
 function scorerPrompt() {}
 
