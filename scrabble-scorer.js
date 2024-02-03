@@ -68,11 +68,37 @@ function simpleScorer(word) {
 	   }
 	}
 	return letterPoints;
-}
+};
 
 console.log(simpleScorer(initialPrompt()));
 
-let vowelBonusScorer;
+// Task 2.2: Define a function "vowelBonusScorer" that takes a word as a 
+// parameter and returns a score. Each vowel within the word is worth 3 points, 
+// and each consonant is worth 1 point.
+
+const vowelBonusPointStructure = {
+   1: ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'],
+   3: ['A', 'E', 'I', 'O', 'U']
+};
+
+function vowelBonusScorer(word) {
+	word = word.toUpperCase();
+	let letterPoints = "";
+ 
+	for (let i = 0; i < word.length; i++) {
+ 
+	  for (const pointValue in vowelBonusPointStructure) {
+ 
+		 if (vowelBonusPointStructure[pointValue].includes(word[i])) {
+			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+		   }
+ 
+	   }
+	}
+	return letterPoints;
+};
+
+console.log(vowelBonusScorer(initialPrompt()));
 
 let scrabbleScorer;
 
