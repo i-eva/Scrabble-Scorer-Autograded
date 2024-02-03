@@ -104,6 +104,10 @@ function vowelBonusScorer(word) {
 // It should be populated with three objects, one for each of the three scoring options. 
 // Each object should contain three keys: name, description, and scoringFunction.
 
+// Task 2.4 Examine the table for the information to store in name and description. 
+// The scoringFunction for each object should be the name of one of the three scoring 
+// algorithms already defined.
+
 let scrabbleScorer;
 
 let simple = {
@@ -126,6 +130,9 @@ let scrabble = {
 
 const scoringAlgorithms = [simple, vowel, scrabble];
 
+// Task 2.5 Finish writing scorerPrompt() so that the user can select which 
+// scoring algorithm to use when the program scores their word.
+
 function scorerPrompt() {
    console.log(`Which scoring algorithm would you like to use?
 
@@ -137,6 +144,11 @@ function scorerPrompt() {
    scrabbleScorer = input.question("Enter a 0, 1, or 2: ");
    return scrabbleScorer; 
 };
+
+// Task 2.6 Call scorerPrompt() inside of runProgram() so that the program asks 
+// the user for a scoring algorithm after prompting for a word. Use the 
+// scoring object returned from scorerPrompt() to score the user’s word 
+// and let the user know what score their word receives.
 
 function transform() {};
 
