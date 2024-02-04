@@ -163,21 +163,36 @@ function scorerPrompt() {
 
 // Output "Score for '<word>' is: <score>"
 
+// function transform(obj) {
+//    let newObj = {
+//    };
+//    for (key in obj) {
+//       for (value in obj[key]) {
+//          newKey = value;
+//          newValue = key;
+//          newObj[newKey] = newValue;
+//       }
+//       newObj[newKey] = newValue;
+//    };
+//    return newObj;
+// };
+
+console.log(oldPointStructure);
+
 function transform(obj) {
-   let newObj = {
-   };
-   for (item in obj) {
-      for (letter in obj[item]) {
-         newKey = letter;
-         newValue = item;
-         newObj[newKey] = newValue;
+   for (key in obj) {
+      console.log(key);
+      for (value in obj[key]) {
+         console.log((obj[key])[value]);
       }
-   };
-   return newObj;
+   }
 };
 
-let newPointStructure = transform(oldPointStructure);
-console.log(newPointStructure);
+console.log(transform(oldPointStructure));
+
+let newPointStructure;
+//let newPointStructure = transform(oldPointStructure);
+//console.log(newPointStructure);
 
 
 function runProgram() {
