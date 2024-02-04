@@ -148,8 +148,8 @@ function scorerPrompt() {
       2 - Scrabble: Uses scrabble point system
       
       `);
-   scrabbleScorer = input.question("Enter a 0, 1, or 2: ");
-   return scrabbleScorer;
+   scoreMenu = input.question("Enter a 0, 1, or 2: ");
+   return scoreMenu;
 };
 
 //   // Simple scoring example
@@ -165,7 +165,7 @@ function scorerPrompt() {
 
 function transform() {};
 
-let newPointStructure;
+let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
    let wordInput = initialPrompt();
