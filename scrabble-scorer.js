@@ -16,21 +16,21 @@ const oldPointStructure = {
 
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
-	// let letterPoints = "";
-   let wordPoints = 0;
+	let letterPoints = "";
+   // let wordPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in oldPointStructure) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
-         wordPoints = ` Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
-			// letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+         // wordPoints = ` Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
+		   letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		 }
  
 	  }
 	}
-	return wordPoints;
+	return letterPoints;
  };
 
 // your job is to finish writing these functions and variables that we've named //
@@ -46,7 +46,7 @@ function initialPrompt() {
 // Task 1.2: Use the oldScrabbleScorer() function provided to score the word 
 // provided by the user. Print the result to the console.
 
-// console.log(oldScrabbleScorer(initialPrompt()));
+console.log(oldScrabbleScorer(initialPrompt()));
 
 // Task 2.1: Define a function "simpleScorer" that takes a word as a 
 // parameter and returns a numerical score. Each letter within the word is worth 1 point.
@@ -57,24 +57,24 @@ const simplePointStructure = {
 
 function simpleScorer(word) {
 	word = word.toUpperCase();
-	// let letterPoints = "";
-   let wordPoints = 0;
+	let letterPoints = "";
+   // let wordPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in simplePointStructure) {
  
 		 if (simplePointStructure[pointValue].includes(word[i])) {
-         wordPoints = `Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
-			// letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+         // wordPoints = `Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
+			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		   }
  
 	   }
 	}
-	return wordPoints;
+	return letterPoints;
 };
 
-// console.log(simpleScorer(initialPrompt()));
+console.log(simpleScorer(initialPrompt()));
 
 // Task 2.2: Define a function "vowelBonusScorer" that takes a word as a 
 // parameter and returns a score. Each vowel within the word is worth 3 points, 
@@ -87,24 +87,24 @@ const vowelBonusPointStructure = {
 
 function vowelBonusScorer(word) {
 	word = word.toUpperCase();
-   let wordPoints = 0;
-	// let letterPoints = "";
+   // let wordPoints = 0;
+	let letterPoints = "";
  
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in vowelBonusPointStructure) {
  
 		 if (vowelBonusPointStructure[pointValue].includes(word[i])) {
-			wordPoints = `Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
-         // letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+			// wordPoints = `Points for '${word[i]}': ${wordPoints + Number(pointValue)}\n`
+         letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		   }
  
 	   }
 	}
-	return wordPoints;
+	return letterPoints;
 };
 
-// console.log(vowelBonusScorer(initialPrompt()));
+console.log(vowelBonusScorer(initialPrompt()));
 
 // Task 2.3: Finish writing the scoringAlgorithms array. 
 // It should be populated with three objects, one for each of the three scoring options. 
@@ -148,7 +148,7 @@ function scorerPrompt() {
       
       `);
    scrabbleScorer = input.question("Enter a 0, 1, or 2: ");
-   console.log(`Score for ${scoringAlgorithms[scrabbleScorer].name} is: ${scoringAlgorithms[scrabbleScorer].scorerFunction()}`);
+   // console.log(`Score for ${scoringAlgorithms[scrabbleScorer].name} is: ${scoringAlgorithms[scrabbleScorer].scorerFunction()}`);
    return scrabbleScorer; 
 };
 
