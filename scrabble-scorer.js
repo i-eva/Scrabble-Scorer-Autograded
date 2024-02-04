@@ -163,9 +163,22 @@ function scorerPrompt() {
 
 // Output "Score for '<word>' is: <score>"
 
-function transform() {};
+function transform(obj) {
+   let newObj = {
+   };
+   for (item in obj) {
+      for (letter in obj[item]) {
+         newKey = letter;
+         newValue = item;
+         newObj[newKey] = newValue;
+      }
+   };
+   return newObj;
+};
 
 let newPointStructure = transform(oldPointStructure);
+console.log(newPointStructure);
+
 
 function runProgram() {
    let wordInput = initialPrompt();
