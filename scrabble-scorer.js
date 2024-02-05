@@ -177,22 +177,21 @@ function scorerPrompt() {
 //    return newObj;
 // };
 
-console.log(oldPointStructure);
+// console.log(oldPointStructure);
 
 function transform(obj) {
    for (key in obj) {
-      console.log(key);
       for (value in obj[key]) {
-         console.log((obj[key])[value]);
+         console.log(`${(obj[key])[value]}, ${key}`);
       }
    }
 };
 
-console.log(transform(oldPointStructure));
+// console.log(transform(oldPointStructure));
 
-let newPointStructure;
-//let newPointStructure = transform(oldPointStructure);
-//console.log(newPointStructure);
+// let newPointStructure;
+let newPointStructure = transform(oldPointStructure);
+console.log(newPointStructure);
 
 
 function runProgram() {
