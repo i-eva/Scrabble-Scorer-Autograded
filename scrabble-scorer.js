@@ -180,11 +180,16 @@ function scorerPrompt() {
 // console.log(oldPointStructure);
 
 function transform(obj) {
-   for (key in obj) {
-      for (value in obj[key]) {
-         console.log(`${(obj[key])[value]}, ${key}`);
+   let newObj = {
+   };
+   for (oldKey in obj) {
+      for (value in obj[oldKey]) {
+         let newKey = ((obj[oldKey])[value]);
+         newKey = newKey.toLowerCase()
+         newObj[newKey] = oldKey
       }
    }
+   return newObj;
 };
 
 // console.log(transform(oldPointStructure));
