@@ -115,7 +115,17 @@ function vowelBonusScorer(word) {
 // The scoringFunction for each object should be the name of one of the three scoring 
 // algorithms already defined.
 
-let scrabbleScorer;
+// let scrabbleScorer;
+function scrabbleScorer(word) {
+	word = word.toLowerCase();
+   let wordPoints = 0;
+   let pointValue = 0;
+	for (let i = 0; i < word.length; i++) {
+      pointValue = newPointStructure[word[i]] 
+      wordPoints = wordPoints + Number(pointValue);   
+   }
+   return `${wordPoints}`;
+};
 
 let simple = {
    name: "Simple Score",
@@ -132,7 +142,7 @@ let vowel = {
 let scrabble = {
    name: "Scrabble",
    description: "The traditional scoring algorithm.",
-   scorerFunction: oldScrabbleScorer,
+   scorerFunction: scrabbleScorer,
 };
 
 const scoringAlgorithms = [simple, vowel, scrabble];
@@ -196,7 +206,7 @@ function transform(obj) {
 
 // let newPointStructure;
 let newPointStructure = transform(oldPointStructure);
-console.log(newPointStructure);
+//console.log(newPointStructure);
 
 
 function runProgram() {
