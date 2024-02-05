@@ -31,7 +31,7 @@ function oldScrabbleScorer(word) {
 	  }
 	}
 	// return letterPoints;
-   return `${wordPoints}`;
+   return wordPoints;
  };
 
 // your job is to finish writing these functions and variables that we've named //
@@ -72,7 +72,7 @@ function simpleScorer(word) {
  
 	   }
 	}
-	return `${wordPoints}`;
+	return wordPoints;
 };
 
 // console.log(simpleScorer(initialPrompt()));
@@ -102,7 +102,7 @@ function vowelBonusScorer(word) {
  
 	   }
 	}
-	return `${wordPoints}`;
+	return wordPoints;
 };
 
 // console.log(vowelBonusScorer(initialPrompt()));
@@ -124,7 +124,7 @@ function scrabbleScorer(word) {
       pointValue = newPointStructure[word[i]] 
       wordPoints = wordPoints + Number(pointValue);   
    }
-   return `${wordPoints}`;
+   return wordPoints;
 };
 
 let simple = {
@@ -196,7 +196,7 @@ function transform(obj) {
       for (value in obj[oldKey]) {
          let newKey = ((obj[oldKey])[value]);
          newKey = newKey.toLowerCase()
-         newObj[newKey] = oldKey
+         newObj[newKey] = Number(oldKey)
       }
    }
    return newObj;
