@@ -230,4 +230,3 @@ module.exports = {
 	runProgram: runProgram,
 	scorerPrompt: scorerPrompt
 };
-// no bonus mission yet
